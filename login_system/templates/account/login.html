@@ -1,0 +1,224 @@
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}
+
+{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .form-group button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  .social_button {
+    background-color: #5c5aff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 94%;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    text-decoration: none;
+  }
+  .text {
+  color: #fff; 
+  text-decoration: none; 
+}
+   .social_button:hover{
+   background-color: rgb(202, 233, 255);
+   }
+
+/* Styles for Facebook Logo */
+.logo {
+  width: 30px; /* Adjust the size of the logo */
+  vertical-align: middle;
+  margin-right: 10px; /* Add some space between the logo and text */
+}
+.logo-git{
+  width: 30px; /* Adjust the size of the logo */
+  vertical-align: middle;
+  margin-right: 10px; /* Add some space between the logo and text */
+}
+.form-group button:hover {
+    background-color: #222;
+  }
+
+  /* Custom CSS styles */
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .forgot-password-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .button{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  .button:hover{
+    background-color: #ccc;
+  }
+  .forgot-password-button {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .name{
+    text-align: center;
+  }
+  .text-align{
+    text-align: center;
+  }
+ .button-git{
+  background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 94%;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+
+  
+
+ } 
+ .button-git:hover{
+  background-color: #fff;
+ }
+
+.text-git{
+  text-align: center;
+  color: #fff; 
+  text-decoration: none; 
+    }
+</style>
+
+<div class="navbar">
+  <a href="{% url 'home' %}">Home</a>
+  <a href="{% url 'account_login' %}">Sign In</a>
+  <a href="{% url 'account_signup' %}">Sign Up</a>
+  <a href="{% url 'About-me' %}">About-me</a>
+  <a href="{% url 'Contact-me' %}">Contact-me</a>
+</div>
+
+<div class="container">
+ <div class="name">
+  <h1>Login</h1>
+  </div>
+
+  <form class="signin-form" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.login.id_for_label }}">{{ form.login.label }}</label>
+      {{ form.login }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+      {{ form.password }}
+    </div>
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button class="button" type="submit">{% trans "Sign In" %}</button>
+   
+    <div class="text-align"><p style="margin-bottom: 40px;">_______________________ or _______________________</p></div>
+    
+    <div class="social_button">
+      <a class="text" href="{% provider_login_url 'facebook' %}">
+        <img class="logo" src="https://i.imgur.com/ErAhzEk.png" alt="Facebook Logo">
+        Sign In with Facebook
+      </a>
+    </div>
+    <p style="margin-bottom: 20px;"></p>
+    <div class="button-git">
+      <a class="text-git" href="{% provider_login_url 'github' %}">
+        <img class="logo-git" src="https://i.imgur.com/6tbfLvQ.png" alt="github Logo">
+        Sign In with GitHUb
+      </a>
+    </div>
+      
+  </form>
+  <form action ="{% url 'account_signup' %}">
+   <button class="button" type="submit">Sign Up</button>
+  </form>
+</div>
+{% endblock %}

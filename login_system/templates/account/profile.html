@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shapes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .circle {
+    background-color: #5c5aff;
+  }
+
+  .triangle {
+    background-color: #00a99d;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .square {
+    background-color: #f06d06;
+  }
+
+  .content-box {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .sign-out-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+  }
+
+  .sign-out-button:hover {
+    background-color: #222;
+  }
+
+  .user-greeting {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+</style>
+
+<div class="container">
+  <div class="shapes-container">
+    <div class="shape circle" style="top: 20%; left: 10%; width: 150px; height: 150px;"></div>
+    <div class="shape triangle" style="top: 30%; left: 70%; width: 120px; height: 120px;"></div>
+    <div class="shape square" style="top: 70%; left: 40%; width: 100px; height: 100px;"></div>
+  </div>
+
+  <div class="content-box">
+    <p>You are logged in</p>
+    <p class="user-greeting">Welcome, {{ user.username }}</p>
+    <button class="sign-out-button">Sign Out</button>
+  </div>
+</div>
+{% endblock %}

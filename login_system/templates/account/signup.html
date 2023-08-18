@@ -1,0 +1,225 @@
+
+{% load i18n %}
+
+
+{% block content %}
+<style>
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+
+  
+  .captcha-container label {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  }
+
+  .captcha-images-container {
+  flex-wrap: wrap;
+  }
+  .captcha-container {
+  margin-top: 20px;
+  }
+
+  .captcha-images-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  }
+
+  .captcha-image {
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  object-fit: cover;
+  }
+
+  .captcha-image.selected {
+  border-color: green;
+  }        
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Custom CSS styles */
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .signup button {
+    width: 96%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .signup button:hover {
+    background-color: #333;
+  }
+
+  .signup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .signup input[type="text"],
+  .signup input[type="password"],
+  .signup input[type="email"] {
+    width: 90%;
+    padding: 18px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 17px;
+  }
+</style>
+
+<div class="navbar">
+  <a href="{% url 'home' %}">Home</a>
+  <a href="{% url 'account_login' %}">Sign In</a>
+  <a href="{% url 'account_signup' %}">Sign Up</a>
+  <a href="{% url 'About-me' %}">About-me</a>
+  <a href="{% url 'Contact-me' %}">Contact-me</a>
+</div>
+
+<div class="container">
+  <h2>{% trans "Sign Up" %}</h2>
+
+  <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    <label for="{{ form.username.id_for_label }}">{{ form.username.label_tag }}</label>
+    {{ form.username }}
+    <label for="{{ form.password1.id_for_label }}">{{ form.password1.label_tag }}</label>
+    {{ form.password1 }}
+    <label for="{{ form.password2.id_for_label }}">{{ form.password2.label_tag }}</label>
+    {{ form.password2 }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <div class="captcha-container">
+    <label>Please select both repeated images:</label>
+    <!-- Container for displaying CAPTCHA images -->
+    <div class="captcha-images-container" id="captchaImagesContainer"></div>
+   </div>
+    <button onclick = "return validateCaptcha()" type="submit">{% trans "Sign Up" %} </button>
+  </form>
+</div>
+<script>
+  // Function to shuffle an array randomly
+  function shuffleArray(array) {
+  // This function shuffles the elements of an array randomly using the Fisher-Yates algorithm.
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+  }
+
+  // Function to generate the CAPTCHA with one repeated image
+  function generateCaptcha() {
+  // Array of image URLs used in the CAPTCHA
+      const images = [
+          
+          'https://s2-g1.glbimg.com/iu2_8bp9OLmx80D0AK4NuV2HgIs=/0x0:5184x3456/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/R/u/B4VcrcQbOBqFEBe1Qnqg/joe-caione-qo-pif84vxg-unsplash.jpg',
+          'https://s2-g1.glbimg.com/t8wVtFzBJzORYL9IhYNbczPAkMo=/0x0:2000x1333/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/E/R/IZZInnQbWHDMWtpYrtIA/praia-guarapiranga-2019-01-18-q98a0076-fabio-tito-g1.jpg',
+          'https://s2-g1.glbimg.com/slaVZgTF5Nz8RWqGrHRJf0H1PMQ=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/U/e/NTegqdSe6SoBAoQDjKZA/cachorro.jpg',
+          'https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/03/visa%CC%83o-do-cachorro-2.jpeg?w=626&ssl=1',
+          'https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/03/visa%CC%83o-do-cachorro.jpeg?w=626&ssl=1',
+          'https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/03/visa%CC%83o-do-cachorro-3.jpeg?w=626&ssl=1'
+      ];
+       // Choose a random image to be the repeated image
+      const repeatedImage = images[Math.floor(Math.random() * images.length)]; 
+      // Select 3 random distinct images from the array
+      const selectedImages = shuffleArray(images.filter(image => image !== repeatedImage)).slice(0, 3); 
+      // Clear previous images from the CAPTCHA container
+      const captchaImagesContainer = document.getElementById('captchaImagesContainer');
+      captchaImagesContainer.innerHTML = ''; 
+      // Double the selected images and add the repeated image for repetition
+      const repeatedImages = selectedImages.concat(repeatedImage, repeatedImage);
+      // Shuffle the repeated images randomly
+      const shuffledRepeatedImages = shuffleArray(repeatedImages);
+      // Create image elements for each shuffled repeated image and add them to the CAPTCHA container
+      for (const image of shuffledRepeatedImages) {
+          const imgElement = document.createElement('img');
+          imgElement.classList.add('captcha-image');
+          // Set the image URL for the image element
+          imgElement.src = image; 
+          imgElement.setAttribute('data-selected', 'false');
+          imgElement.onclick = function () {
+              // Toggle the selected state when clicked
+              const isSelected = this.getAttribute('data-selected') === 'true';
+              this.setAttribute('data-selected', isSelected ? 'false' : 'true');
+              this.classList.toggle('selected');
+          };
+          captchaImagesContainer.appendChild(imgElement);
+      }
+  }
+
+  // Function to validate the CAPTCHA
+  function validateCaptcha() {
+      // Get all selected images from the CAPTCHA
+      const selectedImages = document.querySelectorAll('.captcha-image.selected');
+      if (selectedImages.length !== 2) {
+          alert('Please select both repeated images to verify.');
+          return false;
+      }
+
+      // Check if both selected images are identical (repeated)
+      const firstSelectedImage = selectedImages[0].getAttribute('src');
+      const secondSelectedImage = selectedImages[1].getAttribute('src');
+      if (firstSelectedImage !== secondSelectedImage) {
+          alert('Please select both repeated images to verify.');
+          return false;
+      }
+
+      return true;
+  }
+
+  // Generate a CAPTCHA on page load
+  generateCaptcha();
+
+</script>
+{% endblock %}

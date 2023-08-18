@@ -1,0 +1,161 @@
+
+{% load i18n %}
+
+
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .form-group button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  .social_button {
+    background-color: #5c5aff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 94%;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    text-decoration: none;
+  }
+  .facebook-text {
+  color: #fff; 
+  text-decoration: none; 
+}
+   .social_button:hover{
+   background-color: rgb(202, 233, 255);
+   }
+
+/* Styles for Facebook Logo */
+.facebook-logo {
+  width: 20px; /* Adjust the size of the logo */
+  vertical-align: middle;
+  margin-right: 10px; /* Add some space between the logo and text */
+}
+.form-group button:hover {
+    background-color: #222;
+  }
+
+  /* Custom CSS styles */
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .forgot-password-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .button{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  .button:hover{
+    background-color: #ccc;
+  }
+  .forgot-password-button {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .name{
+    text-align: center;
+  }
+  .text-align{
+    text-align: center;
+  }
+
+</style>
+
+
+
+<div class="container">
+  <div class="name">
+    <h1>{% trans "Sign Out" %}</h1>
+  </div>
+
+  <p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+  <form class="signin-form" method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button class="button" type="submit">{% trans 'Sign Out' %}</button>
+  </form>
+</div>
+{% endblock %}

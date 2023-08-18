@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Luana Cangussú Louza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation styles */
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-8px);
+            }
+        }
+        .title {
+            color: #000000;
+            text-decoration: none;
+            margin-right: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'account_login' %}">Sign In</a>
+        <a href="{% url 'account_signup' %}">Sign Up</a>
+        <a href="{% url 'About-me' %}">About-me</a>
+        <a href="{% url 'Contact-me' %}">Contact-me</a>
+       
+    </div>
+    
+    
+    <div class="container">
+        <div class="title" style="text-align: center;">
+            <h1>Contact-me</h1>
+
+        <h1>Luana Cangussú Louza</h1>
+        <div class="contact-info">
+            <p>I'm a software developer student based in Brazil. I'm passionate about creating clean and efficient code to build innovative solutions.</p>
+            <p>If you want to get in touch, feel free to reach out through any of the following channels:</p>
+            <p><strong>Email:</strong> <a href="mailto:louzaluana@gmail.com">louzaluana@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/luana-louza">linkedin.com/in/luana-louza</a></p>
+            <p><strong>Phone:</strong> +55 062 99691-8913</p>
+            <p><strong>Github:</strong> <a href="https://github.com/luanalouza">github.com/luanalouza</a></p>
+        </div>
+        <!-- Animated Element -->
+        <div class="animate-bounce" style="text-align: center;">
+           <img src="https://i.imgur.com/5WyPpQm.png" title="Offer me a chance." /></a>
+        </div>
+    </div>
+</body>
+</html>

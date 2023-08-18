@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            text-decoration: none; /* Remove underlines */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            animation: none; /* Disable animation on hover */
+        }
+
+      
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #ffffff;
+            border: #333;
+            border-radius: 50%;
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+        .container-image{
+            text-align: center;
+        }
+        .button-container {
+            text-align: center;
+        }
+
+        .article {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'account_login' %}">Sign In</a>
+        <a href="{% url 'account_signup' %}">Sign Up</a>
+        <a href="{% url 'About-me' %}">About-me</a>
+        <a href="{% url 'Contact-me' %}">Contact-me</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Django-AllAuth Advantages</h1>
+        </header>
+        <div class="container-image"><img src="https://i.imgur.com/OVDNdHO.png" title="Django-AllAuth"></div>
+        
+        <div class="article">
+            <h2>Exploring the Advantages of Python Django and AllAuth</h2>
+            <p>In the world of web development, Python Django and AllAuth are two powerful tools that offer numerous advantages and benefits for developers.</p>
+            <p><strong>Python Django:</strong> Django is a high-level Python web framework that simplifies the process of building robust and scalable web applications. It follows the "batteries-included" philosophy, providing a wide range of built-in features and tools that speed up development and encourage best practices. Some advantages of Django include:</p>
+            <ul>
+                <li>Efficient and clean code organization using the MVC (Model-View-Controller) architecture.</li>
+                <li>Automatic admin interface generation, saving time in creating administrative panels for your application.</li>
+                <li>ORM (Object-Relational Mapping) system for database interaction, abstracting away SQL queries.</li>
+                <li>Security features like protection against common web vulnerabilities.</li>
+                <li>Built-in internationalization and localization support for creating multilingual applications.</li>
+            </ul>
+            <p><strong>AllAuth:</strong> AllAuth is a powerful authentication and authorization package for Django applications. It provides a comprehensive set of features for handling user authentication and registration, making it easier to create secure and user-friendly login systems. Some of the benefits of using AllAuth include:</p>
+            <ul>
+                <li>Flexible authentication methods, including email, social media accounts, and more.</li>
+                <li>Easy integration with popular social authentication providers like Google, Facebook, and Twitter.</li>
+                <li>Customizable user registration workflows and email confirmation processes.</li>
+                <li>Token-based authentication for secure API authentication.</li>
+                <li>Integration with Django's built-in authentication system for seamless user management.</li>
+            </ul>
+            <p style="margin-bottom: 60px;">By leveraging the power of Python Django and AllAuth, developers can create feature-rich web applications with efficient code and enhanced security. Whether you're building a simple blog or a complex web platform, these tools can greatly simplify the development process while ensuring a smooth user experience.</p>
+            <div class="button-container">
+                <a href="{% url 'account_login' %}" class="button">Login Now!</a>
+            </div>
+            <p style="margin-bottom: 60px;"> </p>
+        </div>
+
+    </div>
+</body>
+
+</html>
