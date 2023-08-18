@@ -12,7 +12,7 @@ This documentation guides you through the process of setting up and running the 
 
 Step 1: Navigate to Project Directory
 
-Open a terminal.
+Open a terminal:
 
 Change the working directory to the root folder of your project using the command:
 
