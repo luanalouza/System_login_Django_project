@@ -24,7 +24,8 @@
         "source.fixAll": true,
         "source.fixAll.unusedImports": true,
         "source.organizeImports": true
-      }
+      },
+      "editor.defaultFormatter": "ms-python.autopep8"
     },
 
   
@@ -40,4 +41,5 @@
     "python.defaultInterpreterPath": "./venv/bin/python",
     "python.analysis.typeCheckingMode": "basic",
     "cSpell.enabled": true,
+    "python.formatting.provider": "none",
 }
