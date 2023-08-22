@@ -140,4 +140,8 @@ GitHub.sublime-settings
 venv/
 
 # Ignore Python cache
-__pycache__/
+__pycache__/*
+__init__.cpython-311.pyc
+settings.cpython-311.pyc
+urls.cpython-311.pyc
+wsgi.cpython-311.pyc
