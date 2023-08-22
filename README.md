@@ -2,10 +2,7 @@ Project Documentation: Running AllAuth Login System
 
 Important: Replace 'your_path' with the actual path where the project files are located. It is recommended to store them in 'C:/documents'. 
 
-management:
-https://localhost:8000/admin 
-username:admin 
-password:user1234
+
 
 
 This documentation guides you through the process of setting up and running the AllAuth Login System project in a development environment.
@@ -33,6 +30,8 @@ Step 3: Start Development Server
 Navigate to the "login_system" subdirectory of your project:
 cd "your_path/System_login_project-master/login_system
 
+migrate database:
+python manage.py runserver
 
 Start the development server using the following command:
 
