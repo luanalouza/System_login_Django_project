@@ -31,7 +31,8 @@ Navigate to the "login_system" subdirectory of your project:
 cd "your_path/System_login_project-master/login_system
 
 migrate database:
-python manage.py runserver
+
+python manage.py migrate 
 
 Start the development server using the following command:
 
