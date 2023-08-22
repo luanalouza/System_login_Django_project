@@ -11,24 +11,10 @@ Step 1: Navigate to Project Directory
 
 Open a terminal:
 
-Change the working directory to the root folder of your project using the command:
-
-
-cd "your_path/System_login_project-master"
-Step 2: Activate Virtual Environment
-
-Navigate to the virtual environment's "Scripts" directory:
-
-
-cd venv/Scripts
-Activate the virtual environment:
-
-On Windows: Run activate
-On macOS and Linux: Run source activate
-Step 3: Start Development Server
+Change the working directory to the root folder of your project using the command
 
 Navigate to the "login_system" subdirectory of your project:
-cd "your_path/System_login_project-master/login_system
+cd "your_path/System_login_project-master/djangoapp
 
 migrate database:
 
