@@ -54,7 +54,7 @@ Step 5: Navigate the Site
 
 Once you've accessed the site, you can explore its functionalities.
 
-If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration.
+If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration
 
 Conclusion
 
