@@ -36,7 +36,7 @@ python manage.py migrate
 
 Start the development server using the following command:
 
-python manage.py runserver_plus --cert-file "your_path\System_login_project-master\login_system\cert.crt"  
+python manage.py runserver_plus --cert-file "your_path\System_login_project\djangoapp\cert.crt"  
 command launches the server with HTTPS enabled and using the specified SSL certificate.
 
 Step 4: Access the Site
