@@ -28,6 +28,7 @@ RUN python -m venv /venv && \
   /venv/bin/pip install --upgrade pip && \
   /venv/bin/pip install -r /djangoapp/requirements.txt && \
   /venv/bin/pip install django-allauth && \
+  /venv/bin/pip install pyOpenSSL && \
   adduser -D -s /bin/sh duser && \
   mkdir -p /data/web/static && \
   mkdir -p /data/web/media && \
