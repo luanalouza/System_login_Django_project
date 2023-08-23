@@ -1,3 +1,4 @@
+pyOpenSSL==21.0.0
 asgiref==3.7.2
 certifi==2023.7.22
 cffi==1.15.1
@@ -14,11 +15,8 @@ filelock==3.12.2
 fonttools==4.41.1
 idna==3.4
 kiwisolver==1.4.4
-matplotlib==3.7.2
-numpy==1.25.1
 oauthlib==3.2.2
 packaging==23.1
-pandas==2.0.3
 Pillow==10.0.0
 platformdirs==3.10.0
 pycparser==2.21
@@ -34,3 +32,4 @@ sqlparse==0.4.4
 tzdata==2023.3
 urllib3==2.0.4
 virtualenv==20.24.2
+Werkzeug==2.0.1
