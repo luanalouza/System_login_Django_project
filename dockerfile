@@ -46,4 +46,4 @@ ENV PATH="/scripts:/venv/bin:$PATH"
 USER duser
 
 # Execute the scripts/commands.sh file.
-CMD ["commands.sh"]
+CMD ["/bin/sh", "-c", "/scripts/commands.sh"]
