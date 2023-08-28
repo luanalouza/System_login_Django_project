@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import random
+import string
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,16 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'change-me')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-debug_value = int(os.getenv('DEBUG', 1))
-DEBUG = bool(debug_value)
-ALLOWED_HOSTS = [
-    h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
-    if h.strip()
-]
+def generate_secret_key(length=50):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    secret_key = ''.join(random.choice(characters) for _ in range(length))
+    return secret_key
+
+
+SECRET_KEY = generate_secret_key
+
+
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

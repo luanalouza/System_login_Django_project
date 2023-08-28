@@ -9,12 +9,16 @@ This documentation guides you through the process of setting up and running the 
 
 Step 1: Navigate to Project Directory
 
-Open a terminal:
+Open a terminal: ctrl + j
+
+activate environment with the command line:
+
+venv/scripts/activate 
 
 Change the working directory to the root folder of your project using the command
 
-Navigate to the "login_system" subdirectory of your project:
-cd "your_path/System_login_project-master/djangoapp
+Navigate to the "djangoapp" subdirectory of your project:
+cd "./system_login_project/djangoapp"
 
 step 2:migrate database:
 
@@ -22,7 +26,7 @@ python manage.py migrate
 
 Start the development server using the following command:
 
-python manage.py runserver_plus --cert-file "your_path\System_login_project\djangoapp\cert.crt"  
+python manage.py runserver_plus --cert-file ".\certificates\cert.crt"  
 command launches the server with HTTPS enabled and using the specified SSL certificate.
 
 Step 3: Access the Site
