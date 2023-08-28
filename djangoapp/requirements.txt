@@ -1,5 +1,0 @@
-pyOpenSSL==21.0.0
-Django==4.2.3
-django-allauth==0.54.0
-django-extensions==3.2.3
-Werkzeug==2.0.1
