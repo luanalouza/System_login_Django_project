@@ -33,6 +33,9 @@ If your browser displays a warning about an insecure connection due to the self-
 Chrome: Click on "Advanced" > "Proceed to localhost (unsafe)".
 Firefox: Click on "Accept the Risk and Continue".
 Edge: Click on "Details" > "Go on to the webpage (not recommended)".
+
+
+
 Step 4: Navigate the Site
 Once you've accessed the site, you can explore its functionalities. If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration.
 
