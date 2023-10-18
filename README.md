@@ -13,6 +13,7 @@ Change the working directory to the root folder of your project using the comman
 cd your_path/system_login_project
 
 Step 2: Migrate Database
+
 Navigate to the "djangoapp" subdirectory of your project:
 cd "./djangoapp"
 
@@ -21,6 +22,7 @@ python manage.py migrate
 
 Start the development server using the following command:
 python manage.py runserver_plus --cert-file ".\certificates\cert.crt"
+
 This command launches the server with HTTPS enabled and using the specified SSL certificate.
 
 Step 3: Access the Site
@@ -31,7 +33,9 @@ In the address bar, type: https://localhost:8000/
 If your browser displays a warning about an insecure connection due to the self-signed certificate, follow these steps to access the site:
 
 Chrome: Click on "Advanced" > "Proceed to localhost (unsafe)".
+
 Firefox: Click on "Accept the Risk and Continue".
+
 Edge: Click on "Details" > "Go on to the webpage (not recommended)".
 
 
