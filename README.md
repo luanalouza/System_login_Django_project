@@ -51,6 +51,8 @@ Step 4: Navigate the Site
 Once you've accessed the site, you can explore its functionalities. If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration.
 
 
+
+
 Login Page:
 
 ![Captura de tela 2023-10-18 143845](https://github.com/luanalouza/System_login_Django-project/assets/95712511/aefd8512-ac69-4246-ba44-fd403aa6f3bb)
