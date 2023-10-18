@@ -49,4 +49,18 @@ Edge: Click on "Details" > "Go on to the webpage (not recommended)".
 Step 4: Navigate the Site
 
 Once you've accessed the site, you can explore its functionalities. If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration.
+Login Page:
 
+![Captura de tela 2023-10-18 144124](https://github.com/luanalouza/System_login_Django-project/assets/95712511/bc637b1c-6a97-4f43-92e6-97afcc30d83e)
+
+Sign up page:
+
+![Captura de tela 2023-10-18 143956](https://github.com/luanalouza/System_login_Django-project/assets/95712511/b1a2771b-4d86-4c90-8da7-78f32d392639)
+
+Social  media authentication:
+
+![Captura de tela 2023-10-18 143929](https://github.com/luanalouza/System_login_Django-project/assets/95712511/3cacf051-54e5-4435-be82-e7943c2fb402)
+
+Authentication confirmation page:
+
+![Captura de tela 2023-10-18 143845](https://github.com/luanalouza/System_login_Django-project/assets/95712511/7e2fc993-b00c-48ab-a0ee-913cb36cf684)
