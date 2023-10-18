@@ -46,9 +46,4 @@ Once you've accessed the site, you can explore its functionalities.
 
 If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration
 
-Conclusion
-
-Congratulations! You've successfully set up and run the AllAuth Login System project in a development environment. Remember that this setup is not suitable for production deployment due to the self-signed certificate and the use of the development server.
-
-For more advanced deployment options and production-ready setups, consider consulting the official Django and web server documentation.
 
