@@ -55,21 +55,28 @@ Once you've accessed the site, you can explore its functionalities. If you're pr
 
 Login Page:
 
-![Captura de tela 2023-10-18 143845](https://github.com/luanalouza/System_login_Django-project/assets/95712511/aefd8512-ac69-4246-ba44-fd403aa6f3bb)
+![Captura de tela 2023-10-18 143845](https://github.com/luanalouza/System_login_Django-project/assets/95712511/eddd6c44-896d-4671-8808-a79740d52f43)
+
 
 
 Sign up page:
 
-![Captura de tela 2023-10-18 143929](https://github.com/luanalouza/System_login_Django-project/assets/95712511/d58d682d-39ce-426b-a350-411d16c85bf9)
+
+![Captura de tela 2023-10-18 143929](https://github.com/luanalouza/System_login_Django-project/assets/95712511/05468d71-be73-4fec-bf98-c01155e080e6)
+
 
 
 Social  media authentication:
 
-![Captura de tela 2023-10-18 143956](https://github.com/luanalouza/System_login_Django-project/assets/95712511/d860345d-36ef-437e-af42-790ddeac8c47)
+
+![Captura de tela 2023-10-18 143956](https://github.com/luanalouza/System_login_Django-project/assets/95712511/cd05d8a9-48a4-47eb-a468-c713833ab5d8)
+
+
 
 
 Authentication confirmation page:
 
-![Captura de tela 2023-10-18 144124](https://github.com/luanalouza/System_login_Django-project/assets/95712511/383ca683-069a-4a81-badb-dc785489f3be)
+
+![Captura de tela 2023-10-18 144124](https://github.com/luanalouza/System_login_Django-project/assets/95712511/5f69f79c-c7be-4e7a-95bc-d26d9b0e740a)
 
 
