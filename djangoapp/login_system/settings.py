@@ -61,16 +61,16 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'APP': {
-            'client_id': '196483003425299',
-            'secret': '48d9482380d6bbf5c01a4d05870ff8fb',
+            'client_id': 'Your client id', # can be get in facebook API client provider 
+            'secret': 'your secret',
             'key': ''
         }
     },
     'github':{
         'APP':{
-            'client_id':'b3f278ca2c063422fed9',
-            'secret':'7c087a6c759ff15b4352dee2028cc4d9531d153c',
-            'key':''
+            'client_id': 'fill with Your client id', # can be get in github API client provider 
+            'secret': ' fill with your secret',
+            'key': ''
 
         }
     }
