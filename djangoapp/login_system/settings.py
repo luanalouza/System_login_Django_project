@@ -61,8 +61,8 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'APP': {
-            'client_id': 'Your client id', # can be get in facebook API client provider 
-            'secret': 'your secret',
+            'client_id': 'fill with Your client id', # can be get in facebook API client provider 
+            'secret': 'fill with your secret',
             'key': ''
         }
     },
