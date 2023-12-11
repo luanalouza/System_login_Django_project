@@ -28,7 +28,6 @@ cd your_path/system_login_project
 
 pip install -r requirements.txt
 
-Step 2: Migrate Database
 
 # Navigate to the "djangoapp" subdirectory of your project:
 
