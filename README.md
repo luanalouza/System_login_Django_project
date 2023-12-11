@@ -1,20 +1,20 @@
-Project Documentation: Running AllAuth Login System
+# Project Documentation: Running AllAuth Login System
 
 Note: Replace 'your_path' with the actual path where the project files are located. It is recommended to store them in 'C:/documents'.
 
 This documentation guides you through the process of setting up and running the AllAuth Login System project in a development environment.
 
-Step 1: Navigate to Project Directory
+# Navigate to Project Directory
 
 Open a terminal: ctrl + j
 
-Create and Activate the environment:
+# Create and Activate the environment:
 
 Create
 
 python -m venv venv   
 
-On Linux/Mac
+# On Linux/Mac
 
 source venv/bin/activate 
 
@@ -24,27 +24,27 @@ venv\Scripts\activate
 
 cd your_path/system_login_project
 
-Install Dependencies
+# Install Dependencies
 
 pip install -r requirements.txt
 
 Step 2: Migrate Database
 
-Navigate to the "djangoapp" subdirectory of your project:
+# Navigate to the "djangoapp" subdirectory of your project:
 
 cd "./djangoapp"
 
-Migrate the database:
+# Migrate the database:
 
 python manage.py migrate
 
-Start the development server using the following command:
+#Start the development server using the following command:
 
 python manage.py runserver_plus --cert-file ".\certificates\cert.crt"
 
 This command launches the server with HTTPS enabled and using the specified SSL certificate.
 
-Step 3: Access the Site
+# Access the Site
 
 Open your web browser.
 
@@ -58,27 +58,27 @@ Firefox: Click on "Accept the Risk and Continue".
 
 Edge: Click on "Details" > "Go on to the webpage (not recommended)".
 
-Step 4: Navigate the Site
+# Navigate the Site
 
 Once you've accessed the site, you can explore its functionalities. If you're prompted to log in, you can use the authentication options available, such as Facebook or GitHub, depending on the configuration.
 
 
 
 
-Login Page:
+# Login Page:
 
 ![Captura de tela 2023-10-18 143845](https://github.com/luanalouza/System_login_Django-project/assets/95712511/eddd6c44-896d-4671-8808-a79740d52f43)
 
 
 
-Sign up page:
+# Sign up page:
 
 
 ![Captura de tela 2023-10-18 143929](https://github.com/luanalouza/System_login_Django-project/assets/95712511/05468d71-be73-4fec-bf98-c01155e080e6)
 
 
 
-Social  media authentication:
+# Social  media authentication:
 
 
 ![Captura de tela 2023-10-18 143956](https://github.com/luanalouza/System_login_Django-project/assets/95712511/cd05d8a9-48a4-47eb-a468-c713833ab5d8)
@@ -86,7 +86,7 @@ Social  media authentication:
 
 
 
-Authentication confirmation page:
+# Authentication confirmation page:
 
 
 ![Captura de tela 2023-10-18 144124](https://github.com/luanalouza/System_login_Django-project/assets/95712511/5f69f79c-c7be-4e7a-95bc-d26d9b0e740a)
