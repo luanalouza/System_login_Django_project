@@ -35,7 +35,7 @@ cd "./djangoapp"
 
 python manage.py migrate
 
-#Start the development server using the following command:
+# Start the development server using the following command:
 
 python manage.py runserver_plus --cert-file ".\certificates\cert.crt"
 
