@@ -8,13 +8,16 @@ Step 1: Navigate to Project Directory
 
 Open a terminal: ctrl + j
 
-Activate the environment with the command line:
+Create and Activate the environment:
 
-venv/scripts/activate
-
-Change the working directory to the root folder of your project using the command:
-
+python -m venv venv   # Create
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
 cd your_path/system_login_project
+
+Install Dependencies
+
+pip install -r requirements.txt
 
 Step 2: Migrate Database
 
