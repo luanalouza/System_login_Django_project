@@ -10,8 +10,6 @@ Open a terminal: ctrl + j
 
 # Create and Activate the environment:
 
-# to create
-
 python -m venv venv   
 
 # Activate on Linux/Mac
