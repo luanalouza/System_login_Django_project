@@ -10,9 +10,18 @@ Open a terminal: ctrl + j
 
 Create and Activate the environment:
 
-python -m venv venv   # Create
-source venv/bin/activate   # On Linux/Mac
-venv\Scripts\activate      # On Windows
+Create
+
+python -m venv venv   
+
+On Linux/Mac
+
+source venv/bin/activate 
+
+# On Windows
+
+venv\Scripts\activate      
+
 cd your_path/system_login_project
 
 Install Dependencies
