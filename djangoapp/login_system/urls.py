@@ -7,6 +7,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('contact/', views.contact, name='Contact-me'),
     path('about/', views.about, name='About-me'),
-    path('', views.home , name='home'),
+    path('', views.index , name='home'),
     path('accounts/profile/', views.profile, name='profile'),
 ]
