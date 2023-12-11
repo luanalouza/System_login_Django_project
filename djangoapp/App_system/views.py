@@ -4,7 +4,7 @@ def contact(request):
 
     return render(request, 'user/contact.html')
 
-def index(request): 
+def home(request): 
 
     return render(request, 'user/index.html')
 def about(request): 
