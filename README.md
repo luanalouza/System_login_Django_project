@@ -27,7 +27,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 
-# Navigate to the "djangoapp" subdirectory of your project:
+# Navigate to the "djangoapp":
 
 cd "./djangoapp"
 
